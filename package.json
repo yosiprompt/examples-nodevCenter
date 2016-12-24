@@ -1,0 +1,32 @@
+{
+  "name": "nodev-center",
+  "version": "1.0.0",
+  "description": "Nodejs development",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Josías D. Rodríguez",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "*",
+    "ejs": "*",
+    "ejs-mate": "*",
+    "express": "*",
+    "mongoose": "^4.7.2",
+    "passport": "*",
+    "socket.io": "*"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-concurrent": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "^*",
+    "grunt-contrib-watch": "*",
+    "grunt-nodemon": "*"
+  }
+}

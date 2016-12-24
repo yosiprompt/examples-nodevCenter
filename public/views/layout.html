@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="nodev">
+<head>
+	<meta charset="UTF-8">
+	<title>Nodev Center</title>
+	<link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap-theme.css">
+	<link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/style.css">
+
+	<script src="/angular/angular.js"></script>
+	<script src="/moment/min/moment.min.js"></script>
+	<script src="/angular-moment/angular-moment.js"></script>
+	<!-- <script src="/angular-route/angular-route.js"></script> -->
+	<script src="/jquery/dist/jquery.js"></script>
+	<script src="/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/angular-socket-io/socket.js"></script>
+	<!-- <script src="/src/lib/p5.js"></script> -->
+	<!-- <script src="/dist/js/app.js"></script> -->
+</head>
+<body>
+    <%- include navbar.html %>
+    <div class="container-fluid">
+    	<div class="row">
+			<%- body %>
+	    </div>
+    </div>
+</body>
+</html>

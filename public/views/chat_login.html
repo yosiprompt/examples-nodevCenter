@@ -1,0 +1,36 @@
+<% layout('layout.html') -%>
+
+<div class="container" ng-controller="loginchatController">
+	<form ng-submit="openChat()" name="loginChat" novalidate>
+		<div class="form-group success" ng-class="{ 'has-error' : loginChat.username.$invalid && !loginChat.username.$pristine, 'has-success' : loginChat.username.$valid  }">
+
+			<label for="username" class="control-label">Username: </label>
+			<input type="text" name="username" class="form-control" ng-model="username" placeholder="username.." minlength="3" maxlength="8" required>
+
+			<p ng-show="loginChat.username.$error.required && !loginChat.username.$pristine" class="help-block error">Your username is required.</p>
+			<p ng-show="loginChat.username.$error.minlength" class="help-block error">Username is too short.</p>
+            <p ng-show="loginChat.username.$error.maxlength" class="help-block error">Username is too long.</p>
+		</div>
+
+		<!-- Prepended checkbox -->
+		<div class="form-group" ng-class="{ 'has-error' : loginChat.newRoom.$invalid && !loginChat.newRoom.$pristine, 'has-success' : loginChat.newRoom.$valid && createRoom}">
+			<label class="control-label" for="newRoom">Create room: </label>
+			<div class="input-group">
+				<span class="input-group-addon">     
+					<input type="checkbox" ng-model="createRoom" name="createRoom" />
+				</span>
+				<input ng-disabled="!createRoom" name="newRoom" class="form-control" placeholder="Write room name.." type="text" ng-model="newRoom" ng-required="createRoom">
+			</div>
+			<p ng-show="loginChat.newRoom.$error.required && !loginChat.newRoom.$pristine" class="help-block error">The room name is required.</p>
+		</div>
+
+		<div class="form-group" ng-class="{ 'has-error' : loginChat.room.$invalid && !loginChat.room.$pristine, 'has-success' : loginChat.room.$valid && !createRoom}">
+			<label for="room" class="control-label">Rooms available: </label>
+			<select ng-disabled="createRoom" name="room" class="form-control" size="10" ng-model="room" ng-required="!createRoom" ng-options="room as room for room in rooms">
+			</select>
+			<p ng-show="loginChat.room.$invalid && !loginChat.room.$pristine" class="help-block error">The room is required.</p>
+		</div>
+		<button type="submit" class="btn btn-primary" ng-disabled="loginChat.$invalid">Enter</button>
+	</form>
+</div>
+<script src="/js/chat.js"></script>

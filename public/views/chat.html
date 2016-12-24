@@ -1,0 +1,25 @@
+<% layout('layout.html') -%>
+
+<section id="chat" ng-controller="chatController">
+	<div class="container">
+		<div id="chat-screen">
+			<ul class="chat-ul">
+				<li class="{{ msg.side }} clearfix" ng-repeat="msg in inmsgs">
+					<div ng-if="msg.side == 'left'" ng-include="'/views/templates/msgbox-left.html'"></div>
+					<div ng-if="msg.side == 'right'" ng-include="'/views/templates/msgbox-right.html'"></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<footer class="col-sm-12 col-xs-12">
+	    <div class="container">
+	        <form id="frm-msg" class="form-inline">
+	            <div class="form-group col-md-8 col-md-offset-2 col-sm-offset-0 col-sm-12 col-xs-12">
+	                <textarea name="msg" id="msg" class="form-control" placeholder="Write a message" ng-model="msgSent" ng-keyup="$event.which === 13 && sendMsg(msgSent)"></textarea>
+	            </div>
+	            <button type="submit" id="send" class="btn btn-primary btn-lg col-md-1 col-xs-8 col-xs-offset-2 col-md-offset-0" ng-click="sendMsg(msgSent)">Send</button>
+	        </form>
+	    </div>
+	</footer>
+</section>
+<script src="/js/chat.js"></script>

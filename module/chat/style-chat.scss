@@ -1,0 +1,44 @@
+$globeColor: #FFFFFF;
+
+#chat {
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: #272727;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    #msg {
+        width: 100%;
+        resize: none;
+        padding-left: 20px;
+        padding-top: 20px;
+        margin: 0 10px 10px 0;
+    }
+}
+
+.chat-ul {
+    list-style-type: none;
+    li {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px dotted #B3A9A9;
+        p{
+            margin: 0;
+            color: #777777;
+        }
+    }
+    li.left .chat-body {
+        margin-left: 110px;
+    }
+    li.right .chat-body {
+        margin-right: 110px;
+    }
+}
+
+#chat-screen p {
+    padding: 25px;
+    background-color: $globeColor;
+}

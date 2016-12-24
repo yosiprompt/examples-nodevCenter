@@ -1,0 +1,12 @@
+<span class="chat-img pull-left">
+    <img src="/img/nopic.jpg" width="100" height="100" alt="User Avatar" class="img-circle" />
+</span>
+<div class="chat-body clearfix">
+    <div class="header">
+        <strong class="primary-font">{{ msg.user }}</strong>
+        <small class="pull-right text-muted"><span class="glyphicon glyphicon-time"></span> <i data-am-time-ago="{{ msg.time }}"></i></small>
+    </div>
+    <p>
+        {{ msg.msg }}
+    </p>
+</div>

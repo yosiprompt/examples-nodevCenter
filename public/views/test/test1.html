@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test1</title>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		var socket = io.connect('/test1');
+		console.log(socket['json'].id);
+
+	</script>
+	<h1>Test 1</h1>
+</body>
+</html>
